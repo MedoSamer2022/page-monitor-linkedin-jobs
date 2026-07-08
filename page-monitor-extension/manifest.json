@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Multi-Page Monitor Pro",
+  "version": "1.1",
+  "description": "Monitors multiple page elements with refresh limits and custom sound profiles.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs",
+    "scripting",
+    "notifications",
+    "tts",
+    "alarms"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
